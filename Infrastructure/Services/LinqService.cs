@@ -24,34 +24,7 @@ public class LinqService
         _mapper = mapper;
     }
 
-    /*
-    public async Task<Response<string>> GetAmountProduct(ProductAmountDto model)
-    {
-        var test1 = _context.Products.Where(x => x.ProductName == model.ProductName);
-        
-        if (test1!=null)
-        {
-          
-            var test2 = _context.Customers.Where(x => x.PhoneNumber == model.PhoneNumber);
-            if (test2!=null)
-            {
-                if (model.Range<10)
-                {
-                    return new Response<string>($"Total payment amount : {model.Price} somoni")
-                }
-
-                if ()
-                {
-                    
-                }
-            }
-        }
-
-        return new Response<string>("Error Product");
-    }
-    */
-
-
+   
     public async Task<Response<string>> GetPriceCount(string product, decimal price, string phoneNumber, int range)
     {
         var categoriId = await (from p in _context.Products
