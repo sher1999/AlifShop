@@ -63,7 +63,7 @@ public class LinqService
 
                 }
 
-                return new Response<string>("Diapazon xato");
+                return new Response<string>(HttpStatusCode.BadRequest, new List<string>(){"Diapazon xato"}   );
 
             }
 
@@ -85,7 +85,7 @@ public class LinqService
                     return new Response<string>($"Total payment amount : {((price * 8) / 100) + price} somoni");
 
                 }
-                return new Response<string>("Diapazon xato");
+                return new Response<string>(HttpStatusCode.BadRequest, new List<string>(){"Diapazon xato"}   );
             }
 
             if (categoriId == 3)
@@ -100,17 +100,19 @@ public class LinqService
                             return new Response<string>($"Total payment amount : {((price * 5) / 100) + price} somoni");
 
                         }
-                        return new Response<string>("Diapazon xato");
+                        return new Response<string>(HttpStatusCode.BadRequest, new List<string>(){"Diapazon xato"}   );
                     }
 
             else
             {
-                return new Response<string>("Product vujud nadorad");
+               
+                return new Response<string>(HttpStatusCode.BadRequest, new List<string>(){"Product vujud nadorad"}   );
             }
 
         }
+        return new Response<string>(HttpStatusCode.BadRequest, new List<string>(){"poneNumber xato"}   );
 
-                return new Response<string>($"poneNumber xato  ");
+               
             }
 
 
